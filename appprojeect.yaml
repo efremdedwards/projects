@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: default
+  namespace: argocd
+spec:
+  description: Default application project
+  destinations:
+    - namespace: default
+      server: https://kubernetes.default.svc
+  sourceRepos:
+    - https://github.com/efremdedwards/projects
+  syncWindows: []
+
